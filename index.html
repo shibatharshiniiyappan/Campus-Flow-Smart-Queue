@@ -1,0 +1,2550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>CampusFlow — Smart Campus Queue</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+
+<body>
+
+  <!-- =========================================================
+       APP SHELL
+  ========================================================== -->
+
+  <div class="app">
+
+
+    <!-- =======================================================
+         SIDEBAR
+    ======================================================== -->
+
+    <aside class="sidebar">
+
+      <!-- BRAND -->
+
+      <div class="brand">
+
+        <div class="brand-mark">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div>
+          <h1>CampusFlow</h1>
+          <p>Know your wait. Manage your time.</p>
+        </div>
+
+      </div>
+
+
+      <!-- NAVIGATION -->
+
+      <nav class="nav">
+
+        <button
+          class="nav-item active"
+          data-section="home"
+          type="button"
+        >
+          <span class="nav-icon">⌂</span>
+          <span>Home</span>
+        </button>
+
+
+        <button
+          class="nav-item"
+          data-section="services"
+          type="button"
+        >
+          <span class="nav-icon">▦</span>
+          <span>Services</span>
+        </button>
+
+
+        <button
+          class="nav-item"
+          data-section="journey"
+          type="button"
+        >
+          <span class="nav-icon">⇢</span>
+          <span>My Journey</span>
+        </button>
+
+
+        <button
+          class="nav-item"
+          data-section="history"
+          type="button"
+        >
+          <span class="nav-icon">◷</span>
+          <span>History</span>
+        </button>
+
+
+        <button
+          class="nav-item"
+          data-section="officeDashboard"
+          type="button"
+        >
+          <span class="nav-icon">▣</span>
+          <span>Office Dashboard</span>
+        </button>
+
+      </nav>
+
+
+      <!-- SIDEBAR BOTTOM -->
+
+      <div class="sidebar-bottom">
+
+        <div class="help-card">
+
+          <div class="help-icon">?</div>
+
+          <div>
+            <strong>Need help?</strong>
+            <p>We're here for you.</p>
+          </div>
+
+        </div>
+
+
+        <button
+          class="profile-mini"
+          type="button"
+        >
+
+          <div class="avatar">S</div>
+
+          <div class="profile-info">
+
+            <strong>Student</strong>
+
+            <span>
+              Campus ID • 2026
+            </span>
+
+          </div>
+
+          <span class="more">•••</span>
+
+        </button>
+
+      </div>
+
+    </aside>
+
+
+
+    <!-- =======================================================
+         MAIN CONTENT
+    ======================================================== -->
+
+    <main class="main">
+
+
+      <!-- =====================================================
+           TOP BAR
+      ====================================================== -->
+
+      <header class="topbar">
+
+        <div class="mobile-brand">
+
+          <div class="brand-mark small">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <strong>CampusFlow</strong>
+
+        </div>
+
+
+        <div class="topbar-right">
+
+          <div class="live-campus">
+
+            <span class="live-dot"></span>
+
+            Campus Live
+
+          </div>
+
+
+          <button
+            class="notification-btn"
+            id="notificationBtn"
+            type="button"
+            aria-label="Notifications"
+          >
+
+            <span>♢</span>
+            <i></i>
+
+          </button>
+
+
+          <div class="top-avatar">
+            S
+          </div>
+
+        </div>
+
+      </header>
+
+
+
+      <!-- =====================================================
+           HOME SECTION
+      ====================================================== -->
+
+      <section
+        class="section active-section"
+        id="home"
+      >
+
+        <!-- WELCOME -->
+
+        <div class="welcome-row">
+
+          <div>
+
+            <p class="eyebrow">
+              WEDNESDAY · 16 SEPTEMBER 2026
+            </p>
+
+            <h2>
+              Good morning,
+              <span>Student.</span> 👋
+            </h2>
+
+            <p class="subheading">
+              What do you need to get done today?
+            </p>
+
+          </div>
+
+
+          <div class="time-card">
+
+            <span>
+              Campus time
+            </span>
+
+            <strong id="clock">
+              10:24 AM
+            </strong>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+          <span class="search-icon">
+            ⌕
+          </span>
+
+          <input
+            type="text"
+            id="serviceSearch"
+            placeholder="Search for a service, office or document..."
+            autocomplete="off"
+          />
+
+          <span class="search-shortcut">
+            ⌘ K
+          </span>
+
+        </div>
+
+
+
+        <!-- QUICK SERVICES -->
+
+        <div class="section-heading">
+
+          <div>
+
+            <h3>
+              Quick Services
+            </h3>
+
+            <p>
+              Start a campus service in seconds.
+            </p>
+
+          </div>
+
+
+          <button
+            class="text-button"
+            id="viewAllServices"
+            type="button"
+          >
+            View all →
+          </button>
+
+        </div>
+
+
+
+        <div class="service-grid">
+
+
+          <!-- ACCOUNTS -->
+
+          <button
+            class="service-card"
+            data-service="Accounts"
+            type="button"
+          >
+
+            <div class="service-top">
+
+              <div class="service-icon accounts">
+                ₹
+              </div>
+
+              <span class="queue-status">
+                LIVE
+              </span>
+
+            </div>
+
+            <h4>
+              Accounts
+            </h4>
+
+            <p>
+              Fees, payments & receipts
+            </p>
+
+            <div class="service-meta">
+
+              <span>
+                8 waiting
+              </span>
+
+              <strong>
+                ~12 min
+              </strong>
+
+            </div>
+
+          </button>
+
+
+
+          <!-- EXAM CELL -->
+
+          <button
+            class="service-card"
+            data-service="Exam Cell"
+            type="button"
+          >
+
+            <div class="service-top">
+
+              <div class="service-icon exam">
+                ▣
+              </div>
+
+              <span class="queue-status">
+                LIVE
+              </span>
+
+            </div>
+
+            <h4>
+              Exam Cell
+            </h4>
+
+            <p>
+              Certificates & examination
+            </p>
+
+            <div class="service-meta">
+
+              <span>
+                5 waiting
+              </span>
+
+              <strong>
+                ~8 min
+              </strong>
+
+            </div>
+
+          </button>
+
+
+
+          <!-- SCHOLARSHIP -->
+
+          <button
+            class="service-card"
+            data-service="Scholarship"
+            type="button"
+          >
+
+            <div class="service-top">
+
+              <div class="service-icon scholarship">
+                ✦
+              </div>
+
+              <span class="queue-status">
+                LIVE
+              </span>
+
+            </div>
+
+            <h4>
+              Scholarship
+            </h4>
+
+            <p>
+              Applications & verification
+            </p>
+
+            <div class="service-meta">
+
+              <span>
+                11 waiting
+              </span>
+
+              <strong>
+                ~19 min
+              </strong>
+
+            </div>
+
+          </button>
+
+
+
+          <!-- ADMINISTRATION -->
+
+          <button
+            class="service-card"
+            data-service="Administration"
+            type="button"
+          >
+
+            <div class="service-top">
+
+              <div class="service-icon admin">
+                ⌘
+              </div>
+
+              <span class="queue-status">
+                LIVE
+              </span>
+
+            </div>
+
+            <h4>
+              Administration
+            </h4>
+
+            <p>
+              General campus services
+            </p>
+
+            <div class="service-meta">
+
+              <span>
+                3 waiting
+              </span>
+
+              <strong>
+                ~6 min
+              </strong>
+
+            </div>
+
+          </button>
+
+        </div>
+
+
+
+        <!-- YOUR CAMPUS JOURNEY -->
+
+        <div class="section-heading journey-heading">
+
+          <div>
+
+            <h3>
+              Your Campus Journey
+            </h3>
+
+            <p>
+              Track multiple services from one place.
+            </p>
+
+          </div>
+
+
+          <span class="journey-live">
+
+            <span class="live-dot"></span>
+
+            LIVE
+
+          </span>
+
+        </div>
+
+
+
+        <div class="journey-card">
+
+          <div class="journey-main">
+
+            <div class="journey-title">
+
+              <div class="journey-icon">
+                🎓
+              </div>
+
+              <div>
+
+                <span class="mini-label">
+                  ACTIVE JOURNEY
+                </span>
+
+                <h3>
+                  Scholarship Renewal
+                </h3>
+
+              </div>
+
+            </div>
+
+
+            <div class="journey-progress">
+
+
+              <div class="journey-step completed">
+
+                <div class="step-circle">
+                  ✓
+                </div>
+
+                <span>
+                  Department
+                </span>
+
+              </div>
+
+
+              <div class="journey-line filled"></div>
+
+
+              <div class="journey-step current">
+
+                <div class="step-circle">
+                  2
+                </div>
+
+                <span>
+                  Accounts
+                </span>
+
+              </div>
+
+
+              <div class="journey-line"></div>
+
+
+              <div class="journey-step">
+
+                <div class="step-circle">
+                  3
+                </div>
+
+                <span>
+                  Scholarship Cell
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="journey-next">
+
+            <span class="mini-label">
+              NEXT STOP
+            </span>
+
+            <strong>
+              Accounts Office
+            </strong>
+
+            <div class="next-info">
+
+              <span class="people-icon">
+                ♙
+              </span>
+
+              <span>
+                <b id="journeyPeople">2</b>
+                ahead
+              </span>
+
+              <span class="divider"></span>
+
+              <span>
+                ~<b id="journeyTime">6</b> min
+              </span>
+
+            </div>
+
+
+            <button
+              class="primary-small"
+              id="viewJourneyBtn"
+              type="button"
+            >
+              View Journey
+            </button>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- SMART INSIGHT -->
+
+        <div class="insight-card">
+
+          <div class="insight-symbol">
+            ✦
+          </div>
+
+          <div>
+
+            <span class="mini-label">
+              SMART INSIGHT
+            </span>
+
+            <h3>
+              Accounts is expected to get busier around 11:00 AM.
+            </h3>
+
+            <p>
+              Joining before the peak could save you approximately
+              <strong>9 minutes.</strong>
+            </p>
+
+          </div>
+
+
+          <button
+            class="insight-button"
+            id="insightBtn"
+            type="button"
+          >
+            See queue forecast →
+          </button>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =====================================================
+           SERVICES SECTION
+      ====================================================== -->
+
+      <section
+        class="section"
+        id="services"
+      >
+
+        <div class="page-title">
+
+          <div>
+
+            <p class="eyebrow">
+              CAMPUS SERVICES
+            </p>
+
+            <h2>
+              What can we help you with?
+            </h2>
+
+            <p>
+              Choose an office to see its live queue.
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="large-service-grid">
+
+
+          <!-- ACCOUNTS -->
+
+          <button
+            class="large-service-card"
+            data-service="Accounts"
+            type="button"
+          >
+
+            <div class="large-icon accounts">
+              ₹
+            </div>
+
+            <div>
+
+              <h3>
+                Accounts Office
+              </h3>
+
+              <p>
+                Fees, payments, receipts and financial queries.
+              </p>
+
+            </div>
+
+            <div class="large-card-bottom">
+
+              <span class="live-label">
+                ● LIVE
+              </span>
+
+              <strong>
+                12 min wait →
+              </strong>
+
+            </div>
+
+          </button>
+
+
+
+          <!-- EXAM CELL -->
+
+          <button
+            class="large-service-card"
+            data-service="Exam Cell"
+            type="button"
+          >
+
+            <div class="large-icon exam">
+              ▣
+            </div>
+
+            <div>
+
+              <h3>
+                Exam Cell
+              </h3>
+
+              <p>
+                Exam forms, certificates and examination services.
+              </p>
+
+            </div>
+
+            <div class="large-card-bottom">
+
+              <span class="live-label">
+                ● LIVE
+              </span>
+
+              <strong>
+                8 min wait →
+              </strong>
+
+            </div>
+
+          </button>
+
+
+
+          <!-- SCHOLARSHIP -->
+
+          <button
+            class="large-service-card"
+            data-service="Scholarship"
+            type="button"
+          >
+
+            <div class="large-icon scholarship">
+              ✦
+            </div>
+
+            <div>
+
+              <h3>
+                Scholarship Cell
+              </h3>
+
+              <p>
+                Scholarship applications, verification and queries.
+              </p>
+
+            </div>
+
+            <div class="large-card-bottom">
+
+              <span class="live-label">
+                ● LIVE
+              </span>
+
+              <strong>
+                19 min wait →
+              </strong>
+
+            </div>
+
+          </button>
+
+
+
+          <!-- ADMINISTRATION -->
+
+          <button
+            class="large-service-card"
+            data-service="Administration"
+            type="button"
+          >
+
+            <div class="large-icon admin">
+              ⌘
+            </div>
+
+            <div>
+
+              <h3>
+                Administration Office
+              </h3>
+
+              <p>
+                General administration and campus requests.
+              </p>
+
+            </div>
+
+            <div class="large-card-bottom">
+
+              <span class="live-label">
+                ● LIVE
+              </span>
+
+              <strong>
+                6 min wait →
+              </strong>
+
+            </div>
+
+          </button>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =====================================================
+           MY JOURNEY SECTION
+           
+           IMPORTANT:
+           Smart Service Journey is INSIDE this section.
+           Therefore it will only appear when My Journey is active.
+      ====================================================== -->
+
+      <section
+        class="section"
+        id="journey"
+      >
+
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-title">
+
+          <div>
+
+            <p class="eyebrow">
+              MY JOURNEY
+            </p>
+
+            <h2>
+              Scholarship Renewal
+            </h2>
+
+            <p>
+              One journey. Multiple offices. Zero confusion.
+            </p>
+
+          </div>
+
+
+          <span class="active-pill">
+            ● ACTIVE
+          </span>
+
+        </div>
+
+
+
+        <!-- ===================================================
+             JOURNEY PROGRESS
+        ==================================================== -->
+
+        <div class="journey-large-card">
+
+          <div class="journey-large-header">
+
+            <div>
+
+              <span class="mini-label">
+                JOURNEY PROGRESS
+              </span>
+
+              <h3>
+                2 of 3 services
+              </h3>
+
+            </div>
+
+            <div class="journey-percent">
+              67%
+            </div>
+
+          </div>
+
+
+          <div class="progress-bar">
+
+            <div style="width: 67%;"></div>
+
+          </div>
+
+
+
+          <!-- TIMELINE -->
+
+          <div class="journey-timeline">
+
+
+            <!-- STEP 1 -->
+
+            <div class="timeline-item completed">
+
+              <div class="timeline-marker">
+                ✓
+              </div>
+
+              <div class="timeline-content">
+
+                <span>
+                  COMPLETED
+                </span>
+
+                <h3>
+                  Department Office
+                </h3>
+
+                <p>
+                  Documents verified successfully.
+                </p>
+
+              </div>
+
+            </div>
+
+
+
+            <!-- STEP 2 -->
+
+            <div class="timeline-item current">
+
+              <div class="timeline-marker">
+                2
+              </div>
+
+              <div class="timeline-content">
+
+                <span>
+                  NEXT STOP
+                </span>
+
+                <h3>
+                  Accounts Office
+                </h3>
+
+
+                <div class="token-preview">
+
+
+                  <div>
+
+                    <span>
+                      Your token
+                    </span>
+
+                    <!-- JS can update this -->
+                    <strong id="journeyToken">
+                      A-43
+                    </strong>
+
+                  </div>
+
+
+                  <div>
+
+                    <span>
+                      People ahead
+                    </span>
+
+                    <strong id="journeyPagePeople">
+                      2
+                    </strong>
+
+                  </div>
+
+
+                  <div>
+
+                    <span>
+                      Est. wait
+                    </span>
+
+                    <strong>
+                      ~<span id="journeyPageTime">6</span> min
+                    </strong>
+
+                  </div>
+
+                </div>
+
+
+                <button
+                  class="primary-button"
+                  id="journeyTokenBtn"
+                  type="button"
+                >
+                  View Live Queue
+                </button>
+
+              </div>
+
+            </div>
+
+
+
+            <!-- STEP 3 -->
+
+            <div class="timeline-item">
+
+              <div class="timeline-marker">
+                3
+              </div>
+
+              <div class="timeline-content">
+
+                <span>
+                  UPCOMING
+                </span>
+
+                <h3>
+                  Scholarship Cell
+                </h3>
+
+                <p>
+                  Will unlock after Accounts is completed.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- ===================================================
+             SMART MULTI-OFFICE JOURNEY
+             
+             IMPORTANT:
+             This block is intentionally INSIDE #journey.
+             It will NOT appear on Home/Services/History/
+             Office Dashboard.
+        ==================================================== -->
+
+        <div
+          class="smart-journey-card"
+          id="smartJourneyPanel"
+        >
+
+
+          <!-- SMART JOURNEY HEADER -->
+
+          <div class="smart-journey-header">
+
+            <div>
+
+              <span class="section-eyebrow">
+                SMART SERVICE JOURNEY
+              </span>
+
+              <h3>
+                Scholarship Renewal
+              </h3>
+
+              <p>
+                CampusFlow coordinates every office you need to visit.
+              </p>
+
+            </div>
+
+
+            <div class="journey-ai-badge">
+              ✦ SMART ROUTE
+            </div>
+
+          </div>
+
+
+
+          <!-- =================================================
+               SMART JOURNEY TIMELINE
+          ================================================== -->
+
+          <div class="smart-journey-timeline">
+
+
+            <!-- STEP 1 -->
+
+            <div class="smart-journey-step completed">
+
+              <div class="smart-step-marker">
+                ✓
+              </div>
+
+              <div class="smart-step-content">
+
+                <div class="smart-step-top">
+
+                  <strong>
+                    Department Office
+                  </strong>
+
+                  <span class="step-status">
+                    COMPLETED
+                  </span>
+
+                </div>
+
+                <p>
+                  Document verification completed
+                </p>
+
+              </div>
+
+            </div>
+
+
+
+            <!-- STEP 2 -->
+
+            <div class="smart-journey-step active">
+
+              <div class="smart-step-marker">
+                2
+              </div>
+
+              <div class="smart-step-content">
+
+                <div class="smart-step-top">
+
+                  <strong>
+                    Accounts Office
+                  </strong>
+
+                  <span class="step-status waiting">
+                    WAITING
+                  </span>
+
+                </div>
+
+
+                <p id="journeyAccountsInfo">
+                  Token A-43 · 3 people ahead · ~12 min
+                </p>
+
+
+                <div class="journey-eta">
+
+                  <span>
+                    Smart ETA
+                  </span>
+
+                  <strong id="journeyAccountsETA">
+                    11:38 AM
+                  </strong>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+
+            <!-- STEP 3 -->
+
+            <div class="smart-journey-step upcoming">
+
+              <div class="smart-step-marker">
+                3
+              </div>
+
+              <div class="smart-step-content">
+
+                <div class="smart-step-top">
+
+                  <strong>
+                    Scholarship Cell
+                  </strong>
+
+                  <span class="step-status upcoming-status">
+                    UPCOMING
+                  </span>
+
+                </div>
+
+                <p>
+                  You'll be routed here after Accounts.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- =================================================
+               SMART RECOMMENDATION
+          ================================================== -->
+
+          <div class="smart-journey-recommendation">
+
+            <div class="recommendation-icon">
+              ✦
+            </div>
+
+            <div>
+
+              <strong>
+                CampusFlow Recommendation
+              </strong>
+
+              <p id="journeyRecommendation">
+                You don't need to wait at Scholarship Cell yet.
+                Complete Accounts first and we'll notify you when
+                the next queue is ready.
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- =================================================
+               START JOURNEY
+          ================================================== -->
+
+          <button
+            class="start-journey-btn"
+            id="startJourneyBtn"
+            type="button"
+          >
+
+            Start Smart Journey
+
+            <span>
+              →
+            </span>
+
+          </button>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =====================================================
+           HISTORY SECTION
+      ====================================================== -->
+
+      <section
+        class="section"
+        id="history"
+      >
+
+        <div class="page-title">
+
+          <div>
+
+            <p class="eyebrow">
+              ACTIVITY
+            </p>
+
+            <h2>
+              Your History
+            </h2>
+
+            <p>
+              Past campus services and completed visits.
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="history-list">
+
+
+          <!-- HISTORY 1 -->
+
+          <div class="history-item">
+
+            <div class="history-icon accounts">
+              ₹
+            </div>
+
+            <div class="history-info">
+
+              <strong>
+                Accounts Office
+              </strong>
+
+              <span>
+                Fee Payment · A-31
+              </span>
+
+            </div>
+
+            <div class="history-date">
+
+              <span>
+                Yesterday
+              </span>
+
+              <strong class="success-text">
+                Completed
+              </strong>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- HISTORY 2 -->
+
+          <div class="history-item">
+
+            <div class="history-icon exam">
+              ▣
+            </div>
+
+            <div class="history-info">
+
+              <strong>
+                Exam Cell
+              </strong>
+
+              <span>
+                Bonafide Certificate · E-19
+              </span>
+
+            </div>
+
+            <div class="history-date">
+
+              <span>
+                12 Sep 2026
+              </span>
+
+              <strong class="success-text">
+                Completed
+              </strong>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- HISTORY 3 -->
+
+          <div class="history-item">
+
+            <div class="history-icon admin">
+              ⌘
+            </div>
+
+            <div class="history-info">
+
+              <strong>
+                Administration
+              </strong>
+
+              <span>
+                General Request · AD-07
+              </span>
+
+            </div>
+
+            <div class="history-date">
+
+              <span>
+                08 Sep 2026
+              </span>
+
+              <strong class="success-text">
+                Completed
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =====================================================
+           OFFICE DASHBOARD
+      ====================================================== -->
+
+      <section
+        class="section"
+        id="officeDashboard"
+      >
+
+
+        <!-- DASHBOARD HEADER -->
+
+        <div class="office-header">
+
+          <div>
+
+            <span class="section-eyebrow">
+              OFFICE CONTROL CENTER
+            </span>
+
+            <h2>
+              Office Dashboard
+            </h2>
+
+            <p>
+              Monitor queues, serve students, and manage campus
+              congestion in real time.
+            </p>
+
+          </div>
+
+
+          <!-- OFFICE SELECTOR -->
+
+          <div class="office-selector-wrap">
+
+            <label for="officeSelector">
+              Active Office
+            </label>
+
+            <select id="officeSelector">
+
+              <option value="Accounts">
+                Accounts Office
+              </option>
+
+              <option value="Exam Cell">
+                Exam Cell
+              </option>
+
+              <option value="Scholarship">
+                Scholarship Cell
+              </option>
+
+              <option value="Administration">
+                Administration Office
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             LIVE OFFICE STATS
+        ================================================== -->
+
+        <div class="office-stats">
+
+
+          <!-- NOW SERVING -->
+
+          <div class="office-stat">
+
+            <div class="office-stat-label">
+              NOW SERVING
+            </div>
+
+            <div
+              class="office-stat-value"
+              id="officeNowServing"
+            >
+              A-37
+            </div>
+
+            <div class="office-stat-meta">
+              Counter 1
+            </div>
+
+          </div>
+
+
+
+          <!-- WAITING -->
+
+          <div class="office-stat">
+
+            <div class="office-stat-label">
+              WAITING
+            </div>
+
+            <div
+              class="office-stat-value"
+              id="officeWaiting"
+            >
+              8
+            </div>
+
+            <div class="office-stat-meta">
+              Students in queue
+            </div>
+
+          </div>
+
+
+
+          <!-- AVERAGE SERVICE -->
+
+          <div class="office-stat">
+
+            <div class="office-stat-label">
+              AVG. SERVICE
+            </div>
+
+            <div
+              class="office-stat-value"
+              id="officeAvgService"
+            >
+              12 min
+            </div>
+
+            <div class="office-stat-meta">
+              Estimated
+            </div>
+
+          </div>
+
+
+
+          <!-- QUEUE STATUS -->
+
+          <div class="office-stat">
+
+            <div class="office-stat-label">
+              QUEUE STATUS
+            </div>
+
+            <div
+              class="office-stat-value"
+              id="officeQueueStatus"
+            >
+              Moderate
+            </div>
+
+            <div class="office-stat-meta">
+              Live monitoring
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             MAIN DASHBOARD GRID
+        ================================================== -->
+
+        <div class="office-main-grid">
+
+
+          <!-- =================================================
+               LIVE QUEUE
+          ================================================== -->
+
+          <div class="office-panel">
+
+            <div class="office-panel-header">
+
+              <div>
+
+                <h3>
+                  Live Queue
+                </h3>
+
+                <p>
+                  Students currently waiting
+                </p>
+
+              </div>
+
+
+              <span class="panel-live">
+
+                <span></span>
+
+                LIVE
+
+              </span>
+
+            </div>
+
+
+            <!-- JS RENDERS QUEUE HERE -->
+
+            <div
+              class="queue-list"
+              id="officeQueueList"
+            >
+            </div>
+
+
+            <!-- QUEUE CONTROLS -->
+
+            <div class="queue-actions">
+
+              <button
+                class="call-next-btn"
+                id="callNextBtn"
+                type="button"
+              >
+
+                <span>
+                  →
+                </span>
+
+                Call Next
+
+              </button>
+
+
+              <button
+                class="queue-action-secondary"
+                id="markServedBtn"
+                type="button"
+              >
+
+                ✓ Mark Served
+
+              </button>
+
+
+              <button
+                class="queue-action-secondary"
+                id="skipBtn"
+                type="button"
+              >
+
+                Skip
+
+              </button>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- =================================================
+               SMART QUEUE INTELLIGENCE
+          ================================================== -->
+
+          <div class="office-panel smart-office-panel">
+
+            <div class="smart-office-top">
+
+              <div class="smart-office-icon">
+                ✦
+              </div>
+
+              <div>
+
+                <h3>
+                  Smart Queue Intelligence
+                </h3>
+
+                <p>
+                  Real-time congestion analysis
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div
+              class="smart-message"
+              id="smartOfficeMessage"
+            >
+              Queue is operating normally.
+              Current capacity is sufficient.
+            </div>
+
+
+            <!-- FORECAST -->
+
+            <div class="forecast-bar">
+
+              <div class="forecast-header">
+
+                <span>
+                  Queue Load Forecast
+                </span>
+
+                <strong>
+                  Next 30 min
+                </strong>
+
+              </div>
+
+
+              <div class="forecast-track">
+
+                <div
+                  class="forecast-fill"
+                  style="width: 65%;"
+                ></div>
+
+              </div>
+
+            </div>
+
+
+            <!-- RECOMMENDATION -->
+
+            <div class="recommendation">
+
+              <div class="recommendation-icon">
+                💡
+              </div>
+
+              <div>
+
+                <strong>
+                  Smart Recommendation
+                </strong>
+
+                <p>
+                  Monitor the queue and redistribute staff
+                  if congestion increases.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             COUNTER MANAGEMENT
+        ================================================== -->
+
+        <div class="office-panel">
+
+          <div class="office-panel-header">
+
+            <div>
+
+              <h3>
+                Counter Management
+              </h3>
+
+              <p>
+                Monitor active service counters
+              </p>
+
+            </div>
+
+
+            <span class="panel-live">
+
+              <span></span>
+
+              LIVE
+
+            </span>
+
+          </div>
+
+
+
+          <div class="counter-grid">
+
+
+            <!-- COUNTER 1 -->
+
+            <div class="counter-card">
+
+              <div class="counter-header">
+
+                <strong>
+                  Counter 1
+                </strong>
+
+                <span class="counter-status">
+
+                  <span class="counter-dot"></span>
+
+                  ACTIVE
+
+                </span>
+
+              </div>
+
+
+              <div
+                class="counter-token"
+                id="counterToken"
+              >
+                A-37
+              </div>
+
+
+              <div class="counter-meta">
+                Currently serving
+              </div>
+
+
+              <div class="counter-controls">
+
+                <button
+                  type="button"
+                  onclick="callNextToken()"
+                >
+                  Call Next
+                </button>
+
+                <button
+                  type="button"
+                  onclick="markServed()"
+                >
+                  Mark Served
+                </button>
+
+              </div>
+
+            </div>
+
+
+
+            <!-- COUNTER 2 -->
+
+            <div class="counter-card">
+
+              <div class="counter-header">
+
+                <strong>
+                  Counter 2
+                </strong>
+
+                <span class="counter-status">
+
+                  <span class="counter-dot"></span>
+
+                  AVAILABLE
+
+                </span>
+
+              </div>
+
+
+              <div class="counter-token">
+                —
+              </div>
+
+
+              <div class="counter-meta">
+                Ready for next student
+              </div>
+
+
+              <div class="counter-controls">
+
+                <button
+                  type="button"
+                  onclick="callNextToken()"
+                >
+                  Start Queue
+                </button>
+
+              </div>
+
+            </div>
+
+
+
+            <!-- COUNTER 3 -->
+
+            <div class="counter-card">
+
+              <div class="counter-header">
+
+                <strong>
+                  Counter 3
+                </strong>
+
+                <span class="counter-status">
+
+                  <span class="counter-dot"></span>
+
+                  AVAILABLE
+
+                </span>
+
+              </div>
+
+
+              <div class="counter-token">
+                —
+              </div>
+
+
+              <div class="counter-meta">
+                Ready for next student
+              </div>
+
+
+              <div class="counter-controls">
+
+                <button
+                  type="button"
+                  onclick="callNextToken()"
+                >
+                  Start Queue
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             OFFICE ANALYTICS
+        ================================================== -->
+
+        <div class="office-analytics">
+
+          <div class="analytics-title">
+
+            <h3>
+              Today's Queue Analytics
+            </h3>
+
+            <p>
+              Live performance overview
+            </p>
+
+          </div>
+
+
+          <div class="analytics-items">
+
+
+            <!-- WAITING -->
+
+            <div class="analytics-item">
+
+              <span>
+                Students Waiting
+              </span>
+
+              <strong id="analyticsWaiting">
+                8
+              </strong>
+
+            </div>
+
+
+
+            <!-- ETA -->
+
+            <div class="analytics-item">
+
+              <span>
+                Average Wait
+              </span>
+
+              <strong id="analyticsEstimate">
+                12 min
+              </strong>
+
+            </div>
+
+
+
+            <!-- SERVED -->
+
+            <div class="analytics-item">
+
+              <span>
+                Students Served
+              </span>
+
+              <strong id="analyticsServed">
+                37
+              </strong>
+
+            </div>
+
+
+
+            <!-- LOAD -->
+
+            <div class="analytics-item">
+
+              <span>
+                Current Load
+              </span>
+
+              <strong id="analyticsLoad">
+                65%
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+
+  <!-- =========================================================
+       TOKEN MODAL
+  ========================================================== -->
+
+  <div
+    class="modal-overlay"
+    id="tokenModal"
+  >
+
+    <div class="modal">
+
+
+      <button
+        class="modal-close"
+        id="closeModal"
+        type="button"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+
+      <div class="modal-header">
+
+        <span class="modal-live">
+
+          <span class="live-dot"></span>
+
+          LIVE QUEUE
+
+        </span>
+
+
+        <h2 id="modalOffice">
+          Accounts Office
+        </h2>
+
+        <p>
+          Choose a service to join the queue.
+        </p>
+
+      </div>
+
+
+
+      <!-- SERVICE OPTIONS -->
+
+      <div class="service-select">
+
+
+        <!-- FEE PAYMENT -->
+
+        <button
+          class="service-option selected"
+          data-option="Fee Payment"
+          type="button"
+        >
+
+          <span>
+            ₹
+          </span>
+
+          <div>
+
+            <strong>
+              Fee Payment
+            </strong>
+
+            <small>
+              Payments & receipts
+            </small>
+
+          </div>
+
+          <b>
+            →
+          </b>
+
+        </button>
+
+
+
+        <!-- CERTIFICATE -->
+
+        <button
+          class="service-option"
+          data-option="Certificate"
+          type="button"
+        >
+
+          <span>
+            ▣
+          </span>
+
+          <div>
+
+            <strong>
+              Certificate
+            </strong>
+
+            <small>
+              Request & collect
+            </small>
+
+          </div>
+
+          <b>
+            →
+          </b>
+
+        </button>
+
+
+
+        <!-- GENERAL QUERY -->
+
+        <button
+          class="service-option"
+          data-option="General Query"
+          type="button"
+        >
+
+          <span>
+            ?
+          </span>
+
+          <div>
+
+            <strong>
+              General Query
+            </strong>
+
+            <small>
+              Ask the office
+            </small>
+
+          </div>
+
+          <b>
+            →
+          </b>
+
+        </button>
+
+
+
+        <!-- SCHOLARSHIP RENEWAL -->
+
+        <button
+          class="service-option"
+          data-option="Scholarship Renewal"
+          type="button"
+        >
+
+          <span>
+            ✦
+          </span>
+
+          <div>
+
+            <strong>
+              Scholarship Renewal
+            </strong>
+
+            <small>
+              Multi-office verification
+            </small>
+
+          </div>
+
+          <b>
+            →
+          </b>
+
+        </button>
+
+      </div>
+
+
+
+      <!-- QUEUE ESTIMATE -->
+
+      <div class="estimate-box">
+
+        <div>
+
+          <span>
+            Current queue
+          </span>
+
+          <strong id="modalCurrent">
+            A-37
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <span>
+            Waiting
+          </span>
+
+          <strong id="modalWaiting">
+            8
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <span>
+            Estimated
+          </span>
+
+          <strong id="modalEstimate">
+            ~12 min
+          </strong>
+
+        </div>
+
+      </div>
+
+
+
+      <button
+        class="primary-button full"
+        id="getTokenBtn"
+        type="button"
+      >
+        Get My Token →
+      </button>
+
+
+      <p class="modal-note">
+        You can leave the queue anytime before your turn.
+      </p>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================================================
+       GENERATED TOKEN MODAL
+  ========================================================== -->
+
+  <div
+    class="modal-overlay"
+    id="generatedModal"
+  >
+
+    <div class="modal token-modal">
+
+
+      <button
+        class="modal-close"
+        id="closeGenerated"
+        type="button"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+
+      <div class="success-orb">
+        ✓
+      </div>
+
+
+      <span class="modal-live">
+
+        <span class="live-dot"></span>
+
+        TOKEN CONFIRMED
+
+      </span>
+
+
+      <p class="token-label">
+        YOUR TOKEN
+      </p>
+
+
+      <div
+        class="big-token"
+        id="generatedToken"
+      >
+        A-43
+      </div>
+
+
+      <h2 id="generatedOffice">
+        Accounts Office
+      </h2>
+
+
+
+      <!-- TOKEN STATS -->
+
+      <div class="token-stats">
+
+
+        <div>
+
+          <span>
+            NOW SERVING
+          </span>
+
+          <strong id="generatedCurrent">
+            A-37
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <span>
+            AHEAD OF YOU
+          </span>
+
+          <strong id="generatedAhead">
+            5
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <span>
+            EST. WAIT
+          </span>
+
+          <strong id="generatedWait">
+            ~17 min
+          </strong>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- QUEUE PROGRESS -->
+
+      <div class="queue-progress">
+
+        <div id="queueProgress"></div>
+
+      </div>
+
+
+
+      <!-- SMART NOTE -->
+
+      <div class="smart-note">
+
+        <span>
+          ✦
+        </span>
+
+        <div>
+
+          <strong>
+            Smart estimate
+          </strong>
+
+          <p>
+            Based on live queue & average service time.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- NOTIFICATION -->
+
+      <button
+        class="primary-button full"
+        id="notifyBtn"
+        type="button"
+      >
+        🔔 Notify Me When I'm Near
+      </button>
+
+
+      <!-- DONE -->
+
+      <button
+        class="secondary-button full"
+        id="doneTokenBtn"
+        type="button"
+      >
+        Done
+      </button>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================================================
+       TOAST
+  ========================================================== -->
+
+  <div
+    class="toast"
+    id="toast"
+  >
+
+    <span class="toast-icon">
+      ✓
+    </span>
+
+    <div>
+
+      <strong id="toastTitle">
+        Success
+      </strong>
+
+      <p id="toastMessage">
+        Action completed.
+      </p>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+  ========================================================== -->
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
